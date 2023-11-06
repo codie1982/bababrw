@@ -9,18 +9,19 @@
         android:id="@+id/homeFragment"
         android:name="com.grnt.bababrowser001.view.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_browserFragment"
-            app:destination="@id/browserFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/browserFragment"
-        android:name="com.grnt.bababrowser001.view.BrowserFragment"
-        android:label="fragment_browser"
-        tools:layout="@layout/fragment_browser" >
+        android:id="@+id/profilFragment"
+        android:name="com.grnt.bababrowser001.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" >
         <action
-            android:id="@+id/action_browserFragment_to_homeFragment"
+            android:id="@+id/action_profilFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <activity
+        android:id="@+id/browserActivity"
+        android:name="com.grnt.bababrowser001.view.BrowserActivity"
+        android:label="activity_browser"
+        tools:layout="@layout/activity_browser" />
 </navigation>
