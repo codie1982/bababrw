@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BabaBrowser001</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_page">Ana Sayfa</string>
+    <string name="btn_string_main_page">Ana Sayfa</string>
+    <string name="txt_browser_web_page">Web Sayfası</string>
+    <string name="btn_home_open_wepage">Browser\'ı Aç</string>
 </resources>

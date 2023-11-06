@@ -27,6 +27,9 @@ buildscript {
     dependencies {
         classpath Deps.tools_androidgradle
         classpath Deps.tools_kotlingradle
+        def nav_version = "2.5.0"
+
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
     }
 
     // Variables in plugins {} aren't directly supported. Hack around it by setting an
