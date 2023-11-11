@@ -75,7 +75,9 @@ object Deps {
 
     const val mozilla_browser_engine_gecko = "org.mozilla.components:browser-engine-gecko:${AndroidComponents.VERSION}"
     const val mozilla_browser_domains = "org.mozilla.components:browser-domains:${AndroidComponents.VERSION}"
+    const val mozilla_browser_engine_system= "org.mozilla.components:browser-engine-system:${AndroidComponents.VERSION}"
     const val mozilla_browser_session_storage = "org.mozilla.components:browser-session-storage:${AndroidComponents.VERSION}"
+    const val mozilla_browser_session = "org.mozilla.components:browser-session:${AndroidComponents.VERSION}"
     const val mozilla_browser_state = "org.mozilla.components:browser-state:${AndroidComponents.VERSION}"
     const val mozilla_browser_tabstray = "org.mozilla.components:browser-tabstray:${AndroidComponents.VERSION}"
     const val mozilla_browser_toolbar = "org.mozilla.components:browser-toolbar:${AndroidComponents.VERSION}"

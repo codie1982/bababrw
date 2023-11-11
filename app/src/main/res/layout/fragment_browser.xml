@@ -1,30 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mozac="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.BrowserFragment">
+    tools:context=".view.BrowserActivity">
 
-    <TextView
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_view"
+        android:layout_width="match_parent"
+        android:layout_gravity="top"
+        android:background="#ffffcc00"
+        android:layout_marginBottom="@dimen/browser_toolbar_height"
+        android:layout_height="@dimen/browser_toolbar_height"
+        android:visibility="gone" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <mozilla.components.browser.engine.gecko.GeckoEngineView
+            android:id="@+id/engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.grnt.bababrowser001.search.AwesomeBarWrapper
+        android:id="@+id/awesomeBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:visibility="gone" />
+
+    <mozilla.components.feature.findinpage.view.FindInPageBar
+        android:id="@+id/findInPageBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="#000000"
+        mozac:findInPageQueryTextColor="#ffffff"
+        mozac:findInPageQueryHintTextColor="#dddddd"
+        mozac:findInPageResultCountTextColor="#ff88ff"
+        mozac:findInPageButtonsTint="#ff88ff"
+        android:visibility="gone"
+        app:layout_behavior="com.grnt.bababrowser001.browser.FindInPageBarBehavior" />
+
+    <mozilla.components.browser.toolbar.BrowserToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/browser_toolbar_height"
+        android:layout_gravity="bottom"
+        android:background="@color/toolbarBackgroundColor"
+        mozac:browserToolbarTrackingProtectionAndSecurityIndicatorSeparatorColor="@color/photonWhite"
+        mozac:browserToolbarSuggestionForegroundColor="@color/toolbarSuggestionForeground"
+        mozac:browserToolbarSuggestionBackgroundColor="@color/toolbarSuggestionBackground" />
+
+    <mozilla.components.feature.readerview.view.ReaderViewControlsBar
+        android:id="@+id/readerViewBar"
+        android:background="#FFFFFFFF"
+        android:elevation="10dp"
+        android:visibility="gone"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/readerViewAppearanceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_browser_web_page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMain" />
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/mozac_ic_font"
+        android:visibility="gone"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_behavior="com.grnt.bababrowser001.browser.ReaderViewAppearanceButtonBehavior"
+        android:contentDescription="TODO" />
 
-    <Button
-        android:id="@+id/btnMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/btn_string_main_page"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

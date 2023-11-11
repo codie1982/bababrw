@@ -247,6 +247,7 @@ dependencies {
     implementation Deps.mozilla_browser_engine_gecko
 
     implementation Deps.mozilla_browser_domains
+    implementation Deps.mozilla_browser_engine_system
     implementation Deps.mozilla_browser_tabstray
     implementation Deps.mozilla_browser_toolbar
     implementation Deps.mozilla_browser_menu
@@ -326,14 +327,14 @@ dependencies {
     implementation Deps.androidx_compose_material
 
     implementation Deps.google_material
+
     implementation 'androidx.navigation:navigation-fragment-ktx:2.7.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.5'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.mlkit:vision-internal-vkp:18.2.2'
 
     androidTestImplementation Deps.uiautomator
     androidTestImplementation Deps.junit_ktx
+
 
     androidTestImplementation Deps.espresso_core, {
         exclude group: 'com.android.support', module: 'support-annotations'
