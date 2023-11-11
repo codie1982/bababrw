@@ -1,0 +1,106 @@
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:compileKotlin
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar
+
+> Configure project :app
+Uretilen Versiyon Kodu: 53132318
+year + day + time : 5 - 313 - 2318
+Sentry token:  debug :( 
+Sentry token:  raptor :( 
+Sentry token:  nightly :( 
+versionCode for arm64-v8a = 53132320
+versionCode for armeabi-v7a = 53132318
+versionCode for x86 = 53132322
+versionCode for x86_64 = 53132324
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateDebugBuildConfig
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:parseDebugLocalResources
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:mergeDebugResources
+> Task :app:desugarDebugFileDependencies
+> Task :app:mergeDebugJniLibFolders
+> Task :app:checkDebugDuplicateClasses
+> Task :app:validateSigningDebug
+> Task :app:compressDebugAssets
+> Task :app:mergeDebugNativeLibs
+> Task :app:mergeLibDexDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:buildKotlinToolingMetadata
+> Task :app:preNightlyBuild UP-TO-DATE
+> Task :app:generateNightlyBuildConfig
+> Task :app:generateNightlyResValues
+> Task :app:mapNightlySourceSetPaths
+> Task :app:generateNightlyResources
+> Task :app:checkNightlyAarMetadata
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libjnidispatch.so.
+
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeExtDexDebug
+> Task :app:packageNightlyResources
+> Task :app:createNightlyCompatibleScreenManifests
+> Task :app:extractDeepLinksNightly
+> Task :app:processNightlyMainManifest
+> Task :app:processNightlyManifest
+> Task :app:extractProguardFiles
+> Task :app:javaPreCompileNightly
+> Task :app:mergeNightlyJniLibFolders
+> Task :app:parseNightlyLocalResources
+> Task :app:desugarNightlyFileDependencies
+> Task :app:checkNightlyDuplicateClasses
+> Task :app:mergeNightlyResources
+> Task :app:mergeNightlyArtProfile
+> Task :app:mergeNightlyNativeLibs
+
+> Task :app:stripNightlyDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libjnidispatch.so.
+
+> Task :app:processNightlyManifestForPackage
+> Task :app:processDebugResources
+> Task :app:mergeExtDexNightly
+> Task :app:mergeNightlyShaders
+> Task :app:compileNightlyShaders NO-SOURCE
+> Task :app:generateNightlyAssets UP-TO-DATE
+> Task :app:extractNightlyNativeSymbolTables
+> Task :app:mergeNightlyAssets
+> Task :app:mergeNightlyNativeDebugMetadata
+> Task :app:compressNightlyAssets
+> Task :app:kaptGenerateStubsDebugKotlin
+> Task :app:collectNightlyDependencies
+> Task :app:kaptDebugKotlin
+> Task :app:sdkNightlyDependencyData
+> Task :app:writeNightlyAppMetadata
+> Task :app:writeNightlySigningConfigVersions
+> Task :app:preRaptorBuild UP-TO-DATE
+> Task :app:generateRaptorBuildConfig
+> Task :app:checkRaptorAarMetadata
+> Task :app:generateRaptorResValues
+> Task :app:mapRaptorSourceSetPaths
+> Task :app:generateRaptorResources
+
+> Task :app:compileDebugKotlin FAILED
+
+> Task :app:processNightlyResources
+> Task :app:mergeRaptorResources
+69 actionable tasks: 69 executed
