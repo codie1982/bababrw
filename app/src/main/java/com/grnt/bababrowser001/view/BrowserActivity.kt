@@ -152,10 +152,6 @@ open class BrowserActivity : AppCompatActivity() {
     ): View? {
         if(name == GeckoEngineView::class.java.name){
             var engine = components.core.engine.createView(this,attrs);
-            val session:EngineSession =  components.core.engine.createSession()
-            //session.loadUrl("https://www.n11.com")
-            components.useCases.tabsUseCases.addTab.invoke("https://www.n11.com", selectTab = true)
-            engine.render(session)
             return engine.asView()
         }
         return super.onCreateView(parent, name, context, attrs)

@@ -6,8 +6,12 @@ import com.grnt.bababrowser001.components.BackgroundServices
 import com.grnt.bababrowser001.components.Push
 import com.grnt.bababrowser001.components.Services
 import com.grnt.bababrowser001.components.UseCases
+import com.grnt.bababrowser001.components.appstate.AppState
 import com.grnt.bababrowser001.components.core.Analytics
 import com.grnt.bababrowser001.components.core.Core
+import com.grnt.bababrowser001.feature.model.TopSite
+import com.grnt.bababrowser001.perf.lazyMonitored
+import com.grnt.bababrowser001.utils.Settings
 import mozilla.components.browser.session.storage.SessionStorage
 import mozilla.components.feature.customtabs.store.CustomTabsServiceStore
 import mozilla.components.support.base.android.NotificationsDelegate
@@ -46,5 +50,12 @@ class Components(private val context: Context) {
         )
     }
     val services by lazy { Services(context, backgroundServices.accountManager, useCases.tabsUseCases) }
-
+    val settings by lazyMonitored { Settings(context) }
+    val appStore by lazyMonitored {
+        AppStore(
+            initialState = AppState(
+                topSites =  emptyList()
+            )
+        )
+    }
 }

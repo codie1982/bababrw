@@ -50,3 +50,5 @@ fun Context.share(text: String, subject: String = ""): Boolean {
         false
     }
 }
+
+fun Context.settings() = components.settings
