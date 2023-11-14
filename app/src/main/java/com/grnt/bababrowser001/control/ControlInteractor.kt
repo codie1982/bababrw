@@ -25,6 +25,6 @@ class DefaultSessionControlController(
     override fun handleSelectTopSite(topSite: TopSite, position: Int) {
 
         addTabUseCase.invoke(url = topSite.url, selectTab = true, startLoading = true)
-        activity.openToBrowser(BrowserDirection.FromHome)
+        activity.openToBrowser()
     }
 }

@@ -7,7 +7,6 @@
     <string name="btn_home_open_wepage">Browser\'ı Aç</string>
 
 
-
     <!-- Text shown in the toolbar if it is empty -->
     <string name="toolbar_hint">Search or enter address</string>
 

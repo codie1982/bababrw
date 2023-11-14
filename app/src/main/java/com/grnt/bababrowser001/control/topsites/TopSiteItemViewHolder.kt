@@ -2,6 +2,7 @@ package com.grnt.bababrowser001.control.topsites
 
 import android.annotation.SuppressLint
 import android.view.View
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.grnt.bababrowser001.AppStore
@@ -20,6 +21,7 @@ class TopSiteItemViewHolder(
 
     ) :ViewHolder(view){
 
+    private val context = view.context
     private val binding = TopSiteItemBinding.bind(view)
 
 
@@ -33,6 +35,7 @@ class TopSiteItemViewHolder(
             interactor.onSelectTopSite(topSite, position)
         }
         binding.topSiteTitle.text = topSite.title
+        binding.faviconCardImage.setImageDrawable(ResourcesCompat.getDrawable(context.resources,topSite.icon,context.theme));
         binding.topSiteSubtitle.visibility = View.VISIBLE
     }
 

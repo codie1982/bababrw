@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_browserActivity2"
             app:destination="@id/browserActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_tabsTrayFragment"
+            app:destination="@id/tabsTrayFragment" />
     </fragment>
     <fragment
         android:id="@+id/profilFragment"
@@ -26,13 +29,25 @@
             android:id="@+id/action_profilFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/browserFragment"
-        android:name="com.grnt.bababrowser001.browser.BrowserFragment"
-        android:label="BrowserFragment" />
     <activity
         android:id="@+id/browserActivity"
         android:name="com.grnt.bababrowser001.view.BrowserActivity"
         android:label="fragment_browser"
         tools:layout="@layout/fragment_browser" />
+    <fragment
+        android:id="@+id/tabsTrayFragment"
+        android:name="com.grnt.bababrowser001.tabs.TabsTrayFragment"
+        android:label="TabsTrayFragment" >
+        <action
+            android:id="@+id/action_tabsTrayFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/browserFragment2"
+        android:name="com.grnt.bababrowser001.browser.BrowserFragment"
+        android:label="BrowserFragment" >
+        <action
+            android:id="@+id/action_browserFragment2_to_tabsTrayFragment"
+            app:destination="@id/tabsTrayFragment" />
+    </fragment>
 </navigation>

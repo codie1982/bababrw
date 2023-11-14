@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
@@ -22,9 +23,11 @@ import com.grnt.bababrowser001.ext.requireComponents
  * A simple [Fragment] subclass.
  */
 class HomeFragment : Fragment() {
+    private lateinit var btnBrowser: ImageButton
+    private lateinit var btnTabTray: ImageButton
     lateinit var controlRV : RecyclerView
     var navigation: NavController? = null
-    lateinit var btnOpenBrowsers:Button
+
 
     private var _controlInteractor: ControlInteractor? = null
     private val controlInteractor: ControlInteractor
@@ -44,6 +47,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val activity = activity as MainActivity
         var view =  inflater.inflate(R.layout.fragment_home, container, false)
+
         controlRV = view.findViewById(R.id.controllerRecyclerView)
         _controlInteractor = ControlInteractor(
             controller = DefaultSessionControlController(
@@ -60,7 +64,14 @@ class HomeFragment : Fragment() {
 
         updateSessionControlView()
 
-
+        btnBrowser = view.findViewById(R.id.btnBrowser)
+        btnBrowser.setOnClickListener(View.OnClickListener {
+           activity.openToBrowser()
+        })
+        btnTabTray = view.findViewById(R.id.btnTabTray)
+        btnTabTray.setOnClickListener(View.OnClickListener {
+            activity.openToTabTray()
+        })
         return view
     }
 

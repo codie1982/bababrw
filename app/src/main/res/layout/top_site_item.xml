@@ -16,9 +16,22 @@
         android:layout_marginTop="@dimen/top_sites_card_margin_top"
         android:padding="@dimen/top_sites_card_padding"
         android:id="@+id/favicon_card"
+        app:cardCornerRadius="10dp"
+        android:background="@drawable/transparant"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/favicon_card_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src="@drawable/google_logo"
+            android:layout_margin="5dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/todo">
+
+        </ImageView>
     </androidx.cardview.widget.CardView>
 
     <TextView

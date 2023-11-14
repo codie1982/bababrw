@@ -104,7 +104,7 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
     abstract val shouldUseComposeUI: Boolean
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-       // val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
         sessionFeature.set(
             feature = SessionFeature(
@@ -143,7 +143,7 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             view = view,
         )
 
-        /*contextMenuIntegration.set(
+       /* contextMenuIntegration.set(
             feature = ContextMenuIntegration(
                 requireContext(),
                 parentFragmentManager,
@@ -157,7 +157,7 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             owner = this,
             view = view,
         )*/
-       /* shareDownloadsFeature.set(
+        shareDownloadsFeature.set(
             ShareDownloadFeature(
                 context = requireContext().applicationContext,
                 httpClient = requireComponents.core.client,
@@ -166,9 +166,9 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             ),
             owner = this,
             view = view,
-        )*/
+        )
 
-       /* downloadsFeature.set(
+        downloadsFeature.set(
             feature = DownloadsFeature(
                 requireContext(),
                 store = requireComponents.core.store,
@@ -188,9 +188,9 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             ),
             owner = this,
             view = view,
-        )*/
+        )
 
-      /*  appLinksFeature.set(
+        appLinksFeature.set(
             feature = AppLinksFeature(
                 requireContext(),
                 store = requireComponents.core.store,
@@ -202,9 +202,9 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             ),
             owner = this,
             view = view,
-        )*/
+        )
 
-        /*promptsFeature.set(
+        promptsFeature.set(
             feature = PromptFeature(
                 fragment = this,
                 store = requireComponents.core.store,
@@ -219,15 +219,15 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             ),
             owner = this,
             view = view,
-        )*/
+        )
 
-       /* windowFeature.set(
+        windowFeature.set(
             feature = WindowFeature(requireComponents.core.store, requireComponents.useCases.tabsUseCases),
             owner = this,
             view = view,
-        )*/
+        )
 
-        /*fullScreenFeature.set(
+        fullScreenFeature.set(
             feature = FullScreenFeature(
                 store = requireComponents.core.store,
                 sessionUseCases = requireComponents.useCases.sessionUseCases,
@@ -237,9 +237,9 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             ),
             owner = this,
             view = view,
-        )*/
+        )
 
-        /*findInPageIntegration.set(
+        findInPageIntegration.set(
             feature = FindInPageIntegration(
                 requireComponents.core.store,
                 sessionId,
@@ -248,9 +248,9 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             ),
             owner = this,
             view = view,
-        )*/
+        )
 
-       /* sitePermissionFeature.set(
+        sitePermissionFeature.set(
             feature = SitePermissionsFeature(
                 context = requireContext(),
                 fragmentManager = parentFragmentManager,
@@ -266,9 +266,10 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             ),
             owner = this,
             view = view,
-        )*/
+        )
 
-   /*     pictureInPictureIntegration.set(
+   /*
+            pictureInPictureIntegration.set(
             feature = PictureInPictureIntegration(
                 requireComponents.core.store,
                 requireActivity(),
@@ -284,11 +285,11 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
                 null,
                 swipeRefresh,
                 toolbar.height,
-                mozilla.components.feature.session.behavior.ToolbarPosition.TOP,
+                mozilla.components.feature.session.behavior.ToolbarPosition.BOTTOM,
             )
         }
 
-       /* swipeRefreshFeature.set(
+        swipeRefreshFeature.set(
             feature = SwipeRefreshFeature(
                 requireComponents.core.store,
                 requireComponents.useCases.sessionUseCases.reload,
@@ -296,7 +297,7 @@ abstract class BaseBrowserFragment: Fragment(), UserInteractionHandler, Activity
             ),
             owner = this,
             view = view,
-        )*/
+        )
 
         if (BuildConfig.MOZILLA_OFFICIAL) {
             webAuthnFeature.set(

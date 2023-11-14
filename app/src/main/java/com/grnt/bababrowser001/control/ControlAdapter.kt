@@ -1,6 +1,5 @@
 package com.grnt.bababrowser001.control
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
@@ -8,8 +7,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.grnt.bababrowser001.AppStore
 import com.grnt.bababrowser001.Components
+import com.grnt.bababrowser001.R
 import com.grnt.bababrowser001.control.topsites.TopSitePagerViewHolder
 import com.grnt.bababrowser001.feature.model.TopSite
 
@@ -52,20 +51,23 @@ class ControlAdapter(
         when (holder){
             is TopSitePagerViewHolder->{
 
-                var topSites:List<TopSite> =
+                var topSites: List<TopSite> =
                     listOf(
-                    TopSite.Default(1,"Google","https://www.google.com",1),
-                    TopSite.Default(2,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(3,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(4,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(5,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(6,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(7,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(8,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(9,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(10,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(11,"Mozilla","https://www.mozilla.org",1),
-                    TopSite.Default(12,"Mozilla","https://www.mozilla.org",1),
+                        TopSite.Default(
+                            1, "Google", "https://www.google.com",
+                            R.drawable.google_logo, 1,
+                        ),
+                    TopSite.Default(2,"YouTube","https://www.youtube.com",R.drawable.youtube_logo,1),
+                    TopSite.Default(3,"Mozilla","https://www.mozilla.org",R.drawable.mozilla_logo,1),
+                    TopSite.Default(4,"Trendyol","https://www.trendyol.com",R.drawable.trendyol_logo,1),
+                    TopSite.Default(5,"Hürriyet","https://www.hurriyet.com",R.drawable.hurriyet_logo,1),
+                    TopSite.Default(6,"TürkTelekom","https://www.turktelekom.com.tr",R.drawable.tt_logo,1),
+                    TopSite.Default(7,"Facebook","https://www.facebook.com",R.drawable.facebook_logo,1),
+                    TopSite.Default(8,"Sahibinden","https://www.sahibinden.com",R.drawable.sahibinden_logo,1),
+                    TopSite.Default(9,"Hepsiburada","https://www.hepsiburada.com",R.drawable.hepsiburada_logo,1),
+                    TopSite.Default(10,"Türkiye.gov.tr","https://www.mozilla.turkiye.gov.tr",R.drawable.turkiye_logo,1),
+                    TopSite.Default(11,"N11","https://www.n11.com",R.drawable.n11_logo,1),
+                    TopSite.Default(12,"Netflix","https://www.netflix.com",R.drawable.netflix_logo,1),
                 )
 
                 (item as AdapterItem.TopSitePager).topSites

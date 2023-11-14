@@ -3,6 +3,10 @@ package com.grnt.bababrowser001.browser
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.preference.PreferenceManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.grnt.bababrowser001.R
@@ -12,7 +16,10 @@ import com.grnt.bababrowser001.search.AwesomeBarWrapper
 import mozilla.components.browser.thumbnails.BrowserThumbnails
 import mozilla.components.browser.toolbar.BrowserToolbar
 import mozilla.components.concept.engine.EngineView
+import mozilla.components.feature.awesomebar.AwesomeBarFeature
+import mozilla.components.feature.awesomebar.provider.SearchSuggestionProvider
 import mozilla.components.feature.readerview.view.ReaderViewControlsBar
+import mozilla.components.feature.syncedtabs.SyncedTabsStorageSuggestionProvider
 import mozilla.components.feature.tabs.toolbar.TabsToolbarFeature
 import mozilla.components.feature.toolbar.ToolbarFeature
 import mozilla.components.feature.toolbar.WebExtensionToolbarFeature
@@ -51,7 +58,7 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*AwesomeBarFeature(awesomeBar, toolbar, engineView)
+        AwesomeBarFeature(awesomeBar, toolbar, engineView)
             .addSearchProvider(
                 requireContext(),
                 requireComponents.core.store,
@@ -71,17 +78,17 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                 requireComponents.core.historyStorage,
                 requireComponents.useCases.sessionUseCases.loadUrl,
             )
-            .addClipboardProvider(requireContext(), requireComponents.useCases.sessionUseCases.loadUrl)*/
+            .addClipboardProvider(requireContext(), requireComponents.useCases.sessionUseCases.loadUrl)
 
         // We cannot really add a `addSyncedTabsProvider` to `AwesomeBarFeature` coz that would create
         // a dependency on feature-syncedtabs (which depends on Sync).
-      /*  awesomeBar.addProviders(
+        awesomeBar.addProviders(
             SyncedTabsStorageSuggestionProvider(
                 requireComponents.backgroundServices.syncedTabsStorage,
                 requireComponents.useCases.tabsUseCases.addTab,
                 requireComponents.core.icons,
             ),
-        )*/
+        )
 
 
         TabsToolbarFeature(
@@ -129,11 +136,6 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
     private fun showTabs() {
         // For now we are performing manual fragment transactions here. Once we can use the new
         // navigation support library we may want to pass navigation graphs around.
-        println("SHOW TABS")
-       /* activity?.supportFragmentManager?.beginTransaction()?.apply {
-            replace(R.id.container, TabsTrayFragment())
-            commit()
-        }*/
     }
 
 

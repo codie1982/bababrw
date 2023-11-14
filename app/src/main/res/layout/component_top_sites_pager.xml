@@ -10,13 +10,6 @@
     android:layout_marginTop="8dp"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="En İyi Siteler"
-        android:textSize="22sp"
-        android:textColor="@color/text_color"
-        />
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/top_sites_pager"
         android:layout_width="match_parent"

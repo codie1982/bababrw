@@ -2,6 +2,7 @@ package com.grnt.bababrowser001.components.core
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.content.res.ResourcesCompat
 import androidx.preference.PreferenceManager
 import com.grnt.bababrowser001.AppRequestInterceptor
 import com.grnt.bababrowser001.EngineProvider

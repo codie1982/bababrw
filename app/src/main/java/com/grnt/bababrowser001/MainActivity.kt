@@ -19,10 +19,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun openToBrowser(from: BrowserDirection, customTabSessionId: String? = null) {
+    fun openToBrowser() {
         //@IdRes val fragmentId = if (from.fragmentId != 0) from.fragmentId else null
-        Bundle().putString("customTabSessionId",customTabSessionId)
-        Bundle().putInt("customTabSession",from.fragmentId)
         navHost.navController.navigate(R.id.action_homeFragment_to_browserActivity2)
+    }
+    fun openToTabTray() {
+        //@IdRes val fragmentId = if (from.fragmentId != 0) from.fragmentId else null
+        navHost.navController.navigate(R.id.action_homeFragment_to_tabsTrayFragment)
     }
 }

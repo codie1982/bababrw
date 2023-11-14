@@ -115,18 +115,18 @@
                 android:paddingVertical="4dp"
                 android:textColor="@color/text_color"
                 android:textColorHint="@color/hint_color"
-                android:textSize="@dimen/et_text_size"/>
+                android:textSize="@dimen/et_text_size" />
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginHorizontal="42dp"
                 android:layout_marginVertical="4dp"
-                android:src="@drawable/googlelogo"
+                android:src="@drawable/google_logo"
                 android:contentDescription="@string/todo"
                 android:layout_alignParentStart="true" />
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginHorizontal="42dp"
                 android:layout_marginVertical="4dp"
                 android:src="@drawable/search_mic_open"
@@ -158,15 +158,64 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:background="@drawable/bottom_section"
-        android:gravity="center"
+        android:gravity="center_vertical"
+
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <ImageButton
+            android:id="@+id/btnBrowser"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:layout_marginHorizontal="32dp"
+            android:src="@drawable/home_icon"
+            android:background="@drawable/transparant"
+            android:contentDescription="@string/todo">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/btnTabTray"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="32dp"
+            android:src="@drawable/tab_icon"
+            android:background="@drawable/transparant"
+            android:contentDescription="@string/todo">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="32dp"
+            android:src="@drawable/tab_icon"
+            android:background="@drawable/transparant"
+            android:contentDescription="@string/todo">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/btnQM"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="32dp"
+            android:src="@drawable/tab_icon"
+            android:background="@drawable/transparant"
+            android:contentDescription="@string/todo">
+
+        </ImageButton>
     </LinearLayout>
 
 
