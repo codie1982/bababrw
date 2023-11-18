@@ -12,12 +12,14 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.grnt.bababrowser001.MainActivity
 import com.grnt.bababrowser001.R
+import com.grnt.bababrowser001.control.AdapterItem
 import com.grnt.bababrowser001.control.ControlController
 import com.grnt.bababrowser001.control.ControlInteractor
 import com.grnt.bababrowser001.control.ControlView
 import com.grnt.bababrowser001.control.DefaultSessionControlController
 import com.grnt.bababrowser001.ext.components
 import com.grnt.bababrowser001.ext.requireComponents
+import com.grnt.bababrowser001.feature.model.TopSite
 
 /**
  * A simple [Fragment] subclass.
@@ -56,6 +58,8 @@ class HomeFragment : Fragment() {
                 addTabUseCase = requireComponents.useCases.tabsUseCases.addTab
             )
         )
+
+
         controlView = ControlView(
             containerView = controlRV,
             viewLifecycleOwner = viewLifecycleOwner,

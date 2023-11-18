@@ -5,11 +5,11 @@ import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.grnt.bababrowser001.Mode
 import com.grnt.bababrowser001.components.appstate.AppState
 import com.grnt.bababrowser001.ext.components
 import com.grnt.bababrowser001.ext.settings
+import com.grnt.bababrowser001.feature.model.Banner
 import com.grnt.bababrowser001.feature.model.TopSite
 import com.grnt.bababrowser001.utils.Settings
 
@@ -20,19 +20,23 @@ import com.grnt.bababrowser001.utils.Settings
 internal fun normalModeAdapterItems(
     settings: Settings,
     topSites: List<TopSite>,
+    banners: List<Banner>,
 ): List<AdapterItem> {
     val items = mutableListOf<AdapterItem>()
     //var shouldShowCustomizeHome = false
+
     items.add(AdapterItem.TopSitePager(topSites))
+    items.add(AdapterItem.BannerPager(banners))
     settings.toString()
     return items
 }
 private fun AppState.toAdapterList(settings: Settings): List<AdapterItem> = when (mode) {
     is Mode.Normal -> normalModeAdapterItems(
         settings,
-        topSites
-    )
+        topSites,
+        banners
 
+    )
     else -> throw IllegalStateException()
 }
 class ControlView(
@@ -53,11 +57,11 @@ class ControlView(
     init {
         view.apply {
             adapter = controlAdapter
-            layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,true)
         }
     }
     fun update(state: AppState) {
-        controlAdapter.submitList(state.toAdapterList(view.context.settings()))
+        controlAdapter.submitList(state.toAdapterList(view.context.settings(),))
     }
 }
 

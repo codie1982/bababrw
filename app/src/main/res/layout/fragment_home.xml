@@ -199,7 +199,7 @@
             android:scaleType="fitCenter"
             android:layout_weight="1"
             android:layout_marginHorizontal="32dp"
-            android:src="@drawable/tab_icon"
+            android:src="@drawable/search_icon"
             android:background="@drawable/transparant"
             android:contentDescription="@string/todo">
 
@@ -211,7 +211,7 @@
             android:scaleType="fitCenter"
             android:layout_weight="1"
             android:layout_marginHorizontal="32dp"
-            android:src="@drawable/tab_icon"
+            android:src="@drawable/dehaze_icon"
             android:background="@drawable/transparant"
             android:contentDescription="@string/todo">
 

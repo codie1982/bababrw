@@ -2,14 +2,18 @@ package com.grnt.bababrowser001.control
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.AnyRes
 import androidx.annotation.LayoutRes
+import androidx.annotation.Nullable
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.grnt.bababrowser001.Components
 import com.grnt.bababrowser001.R
+import com.grnt.bababrowser001.control.banner.BannerPagerViewHolder
 import com.grnt.bababrowser001.control.topsites.TopSitePagerViewHolder
+import com.grnt.bababrowser001.feature.model.Banner
 import com.grnt.bababrowser001.feature.model.TopSite
 
 class ControlAdapter(
@@ -27,6 +31,9 @@ class ControlAdapter(
                 viewLifecycleOwner = viewLifecycleOwner,
                 interactor = interactor,
             )
+           BannerPagerViewHolder.LAYOUT_ID ->BannerPagerViewHolder(
+               view = view,
+           )
            else -> throw IllegalStateException()
        }
     }
@@ -47,7 +54,7 @@ class ControlAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val item = getItem(position)
+        getItem(position)
         when (holder){
             is TopSitePagerViewHolder->{
 
@@ -69,9 +76,17 @@ class ControlAdapter(
                     TopSite.Default(11,"N11","https://www.n11.com",R.drawable.n11_logo,1),
                     TopSite.Default(12,"Netflix","https://www.netflix.com",R.drawable.netflix_logo,1),
                 )
-
-                (item as AdapterItem.TopSitePager).topSites
                 holder.bind(topSites)
+            }
+            is BannerPagerViewHolder->{
+                /*var banners:List<Banner> = listOf(
+                    Banner(1,
+                        title = "Hepsi Burada",
+                        url = "https://www.hepsiburada.com",
+                        image = R.drawable.hb_banner
+                    )
+                )*/
+                holder.bind()
             }
         }
     }
@@ -98,7 +113,8 @@ class AdapterItemDiffCallback : DiffUtil.ItemCallback<AdapterItem>(){
 
 }
 sealed class AdapterItem(@LayoutRes val viewType: Int) {
-    data class TopSitePager(val topSites: List<TopSite>): AdapterItem(TopSitePagerViewHolder.LAYOUT_ID)
+    data class TopSitePager(var topSites: List<TopSite>): AdapterItem(TopSitePagerViewHolder.LAYOUT_ID)
+    data class BannerPager(var banners: List<Banner>): AdapterItem(BannerPagerViewHolder.LAYOUT_ID)
     data class TopSitePagerPayload(
         val changed: Set<Pair<Int, TopSite>>,
     )

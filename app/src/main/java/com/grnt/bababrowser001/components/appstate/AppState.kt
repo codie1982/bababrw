@@ -1,6 +1,7 @@
 package com.grnt.bababrowser001.components.appstate
 
 import com.grnt.bababrowser001.Mode
+import com.grnt.bababrowser001.feature.model.Banner
 import com.grnt.bababrowser001.feature.model.TopSite
 import mozilla.components.concept.storage.BookmarkNode
 import mozilla.components.lib.state.State
@@ -33,5 +34,6 @@ import mozilla.components.lib.state.State
  */
 data class AppState(
     val topSites: List<TopSite> = emptyList(),
+    val banners: List<Banner> = emptyList(),
     val mode:Mode = Mode.Normal
     ) : State
